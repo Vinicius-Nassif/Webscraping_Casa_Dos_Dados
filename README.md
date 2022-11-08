@@ -14,15 +14,10 @@
 
 - Endereço.
 
-  ​
-
-  Após a obtenção das informações de todos os anúncios, esses dados serão inseridos e armazenados em uma
-
-  planilha do Excel (.xlsx), bem como no MySQL. 
+  ​ Após a obtenção das informações de todos os anúncios, esses dados serão inseridos e armazenados em uma planilha do Excel (.xlsx), bem como no MySQL. 
 
   ​	O intuito dessa atividade irá expor mais intensivamente a automação web, loops, variáveis, manipulações de arquivos, divisão de tarefas em módulos, tratamento de exceções e criação de um banco de dados no MySQL, conforme será demonstrado a seguir.
 
-  ​
 
 ## 2. Módulos
 
