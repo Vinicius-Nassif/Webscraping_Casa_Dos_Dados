@@ -1,0 +1,4 @@
+chromedriver
+*.xlsx
+*.xls
+credenciais.py
