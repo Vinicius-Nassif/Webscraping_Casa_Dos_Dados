@@ -43,7 +43,7 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ​		O projeto teve início no primeiro módulo com a importação das bibliotecas e funções utilizadas na elaboração do código em Python:
 
-![Imagem 1](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\1.png)
+![1](https://user-images.githubusercontent.com/111388699/200622568-e37ec6b4-efc4-489a-8b78-4dd13e3ae36e.png)
 
 ​		Primeiramente, ocorreu a importação da R*equests*, que é uma biblioteca HTTP para a linguagem de programação e tem como funcionalidade tornar as solicitações HTTP mais simples e mais fáceis de usar. 
 
@@ -59,7 +59,7 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ​		O código teve início com a denominação de uma classe chamada *WebScraping():* e sua primeira função foi a __init__():, como podemos ver a seguir:
 
-![Imagem 2](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\2.png)
+![2](https://user-images.githubusercontent.com/111388699/200622653-6d76201f-6bc7-4e65-a2a7-753376941e8f.png)
 
 ​		O método *__init__():* é um método especial para que o *Python* execute automaticamente sempre que criarmos uma nova instância baseada na classe WebScraping(): foi definido para ter quatro parâmetros: o *self, url*, consulta e arquivo.
 
@@ -75,7 +75,7 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ​		Essa função indica a automação do navegador Google Chrome.
 
-![Imagem 3](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\3.png)
+![3](https://user-images.githubusercontent.com/111388699/200622783-da075270-1434-4e80-978c-c54ec119b82f.png)
 
 ​		A automação iniciou-se por meio do *self.navegador* recebendo *o webdriver* do *Selenium*, com as opções atribuídas no método *__init__*. A função do *webdriver* é manipular o navegador nativamente, como um usuário faria, por meio de automação, seja localmente ou em uma máquina remota usando o servidor *Selenium*.
 
@@ -89,7 +89,7 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 Essa função identifica e executa os elementos de navegação do site casa dos dados. 
 
-![Imagem 4](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\4.png)
+![4](https://user-images.githubusercontent.com/111388699/200622893-dda7c404-20ad-4d93-83c8-9a56a45d8817.png)
 
 ​		A imagem demonstra que foi criada a variável *pesquisa_codigo* e ela recebeu o *self.navegador* com o método *find_element* (pertencente à biblioteca do *Selenium*) para encontrar o elemento pelo *xpath* alocando os atributos entre parênteses após inspeção da estrutura HTML do site. 
 
@@ -101,7 +101,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Os métodos *sleep* intercalados receberam como parâmetros segundos variados para aguardar seguir para as próximas etapas, evitando erros na execução e a detecção da automação, permitindo também a visualização dos passos.
 
-![Imagem 5](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\5.png)
+![5](https://user-images.githubusercontent.com/111388699/200622983-b6d4b9a0-555b-4095-b47c-e3caae88b050.png)
 
 
 
@@ -109,7 +109,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Essa função indica o início da integração com a biblioteca *BeautifulSoup*. 
 
-![Imagem 6](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\6.png)
+![6](https://user-images.githubusercontent.com/111388699/200623093-b042da3f-355d-455f-9edf-612f8ca0ab5c.png)
 
 ​		A variável *self.site* recebeu o método *BeautifulSoup*, tendo como parâmetros o *self.navegador.page_source* e o *html.parser*. Aqui ocorre a preparação para identificação do conteúdo a ser extraído e interpretação do conteúdo HTML. 
 
@@ -119,13 +119,13 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Essa função identifica o atributo raiz dos registros.
 
-![Imagem 7](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\7.png)
+![7](https://user-images.githubusercontent.com/111388699/200623188-aba72313-9acf-409c-bb53-ddc4153eeb1b.png)
 
 ​		Já com a biblioteca *BeutifulSoup* integrada com o *Selenium*, a variável *self.hospedagens* recebeu a variável *self.site* com o método *findAll*, com os parâmetros inspecionados da estrutura HTML: div e o atributo de classe a partir da interpretação do conteúdo HTML.
 
 ​		Esses parâmetros foram observados como padrões na estrutura raiz dos anúncios de cada registro. Portanto, a função foi orientada para identificar o bloco raiz de todos os registros da estrutura HTML de cada página a ser percorrida durante a execução do *Web Scraping*. A imagem a seguir ilustra a inspeção desse elemento:
 
-![Imagem 8](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\8.png)
+![8](https://user-images.githubusercontent.com/111388699/200623328-a5bfd29b-9169-48d8-b3cf-1322f8958114.png)
 
 
 
@@ -133,7 +133,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Essa função é responsável pela automação da raspagem de dados de cada de detalhe desejado no registro. 
 
-![Imagem 9](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\9.png)
+![9](https://user-images.githubusercontent.com/111388699/200623401-b60d178a-db15-4747-855b-9dcb98d6654d.png)
 
 ​		Para que a raspagem ocorresse da forma desejada, a função foi introduzida por um laço de repetição *for*. Para cada registro dentro da variável *self.registros*, seria extraída o número, o nome, o status e o endereço.
 
@@ -145,7 +145,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Após definida a estrutura da extração de dados de cada variável, o método *print()* foi chamado, para cada uma delas, de forma que ficasse organizado no terminal do interpretador, sendo que foi utilizado um "*print()*" vazio para realizar uma quebra de linha entre as informações extraídas. 
 
-![Imagem 10](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\10.png)
+![10](https://user-images.githubusercontent.com/111388699/200623472-b7d398c2-c511-4a01-aff3-4a23aa47c801.png)
 
 ​		Encerrando o laço *for*, foi criado um *dataframe* na variável *self.dados_cnpj* com o método *append*, que serviu para anexar as informações extraídas em cada campo especificado.
 
@@ -155,11 +155,11 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Essa função é responsável em encontrar e executar a paginação do website.
 
-![Imagem 11](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\11.png)
+![11](https://user-images.githubusercontent.com/111388699/200623549-b574b755-50b6-40a4-a89d-1f4121d92fc5.png)
 
 ​		É iniciada com a orientação *try*, ou seja, que o *Python* realize a tentativa recebendo a variável *next_button* com a variável *self.navegador* com o método *find_element* pelos parâmetros do HTML. Esse elemento é para identificar o botão de próxima página (“setinha”) que se encontra no próprio site, como se o usuário estivesse visualizando onde clicar desejando a paginação.
 
-![Imagem 12](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\12.png)
+![12](https://user-images.githubusercontent.com/111388699/200623646-5a4f954f-f432-4d69-b846-cfcfb19c0f98.png)
 
 ​		Na sequência, a variável *botao_vazio* recebeu o *next_button* com o método *get_property(‘disabled’)* para identificar caso o botão de paginação tenha em sua propriedade que está desabilitado, com o intuito de encerrar a paginação e evitar erros. 
 
@@ -175,7 +175,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Essa função é responsável pela criação da planilha no Excel. 
 
-![Imagem 13](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\13.png)
+![13](https://user-images.githubusercontent.com/111388699/200623682-ae7e8cc6-2de5-4cfd-bfe4-c7c97920ce0e.png)
 
 ​		A variável dados recebeu o Pandas com a sigla pd e o método *DataFrame*, atribuindo à *self.dados_cnpj* as colunas ‘Número’, ‘Nome’,‘Status’ e ‘Endereço’. 
 
@@ -189,7 +189,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evitar que partes do código sejam executadas ao importar os módulos. Quando o interpretador do *Python* lê um arquivo, a variável **__name__** é definida como **__main__**, se o módulo está sendo executado, ou como o nome do módulo se ele for importado.
 
-![Imagem 14](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\14.png)
+![14](https://user-images.githubusercontent.com/111388699/200623756-30a94487-a5c6-4bfb-ae54-40d754e856fa.png)
 
 ​		Tem o objetivo de orquestrar a execução sequencial de todas as fases do web scraping, como um índice representativo e intuitivo, com o chamado de todos os métodos já explicados e trazendo também mensagens de êxito nas conclusões de cada etapa pelo método *print()*. 
 
@@ -207,7 +207,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		Vejamos como ficou parte da planilha após receber o *dataframe* criado:
 
-![Imagem 15](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\15.png)
+![15](https://user-images.githubusercontent.com/111388699/200623820-5a4631c5-2f72-4b03-abe5-dc6892769853.png)
 
 
 
@@ -217,7 +217,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		O segundo módulo teve início com a importação das seguintes bilbiotecas
 
-![Imagem 16](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\16.png)
+![16](https://user-images.githubusercontent.com/111388699/200623900-313458b4-8815-4a8a-bf8d-c056386a3b4c.png)
 
 ​		O MySQL é um sistema de gerenciamento de dados estruturados relacionais e como o *Python* não tem acesso nativo à banco de dados MySQL, foi necessário importar a biblioteca *mysql.connector*, crianco um script de conexão.
 
@@ -231,7 +231,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		O código teve início com a denominação de uma classe chamada *Excel_to_Mysql():* e sua primeira função foi a __init__():, como podemos ver a seguir:
 
-![Imagem 16](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\17.png)
+![17](https://user-images.githubusercontent.com/111388699/200624046-da5659bb-3994-4399-92a7-1073f2bd11c6.png)
 
 ​		O método *__init__* foi definido para ter três parâmetros: o *self*, *host e schema*.
 
@@ -243,7 +243,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		Essa função é responsável pela criação da tabela no servidor MySQL.
 
-![Imagem 18](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\18.png)
+![18](https://user-images.githubusercontent.com/111388699/200624119-a86c418c-0bfe-468f-92a6-adb121527207.png)
 
 ​		A variável *self.conn* recebeu o método  da biblioteca mysql.connector para estabelecer a conexão, indicando como parâmetros a hospedagem do *database* com o *self.host*, o usuário com *self.my_db_user*, a senha como *self.my_db_password* e o nome do banco de dados no MySQL como *self.schema*.
 
@@ -259,7 +259,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		Essa função é responsável por estabelecer a conexão com servidor MySQL e por inteirar os dados na tabela já criada.
 
-![Imagem 19](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\19.png)
+![19](https://user-images.githubusercontent.com/111388699/200624226-7733d6e5-f9b0-4573-98e4-aa88d0941120.png)
 
 ​		A variável *self.conn* recebeu o método  da biblioteca mysql.connector para estabelecer a conexão, indicando como parâmetros a hospedagem do *database* com o *self.host*, o usuário com self.my_db_user*, a senha como "self.my_db_password* e o nome do banco de dados como *self.schema*.
 
@@ -283,7 +283,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 #### Execução - if __name__ == '__main__':
 
-![Imagem 20](C:\Users\ccece\Documents\Projetos AD\Artigos\Web Scraping + MySql - Casa dos Dados\Imagens\20.png)
+![20](https://user-images.githubusercontent.com/111388699/200625237-c488343f-8be1-4d57-bde3-8bf8ac6313d2.png)
 
 ​		Novamente, tem o objetivo de orquestrar a execução sequencial de todas as fases do envio das informações da planilha do excel para o MySQL, como um índice representativo e intuitivo, com o chamado de todos os métodos já explicados e trazendo também mensagens de êxito nas conclusões de cada etapa pelo método *print()*. 
 
