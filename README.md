@@ -40,11 +40,11 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ![1](https://user-images.githubusercontent.com/111388699/200622568-e37ec6b4-efc4-489a-8b78-4dd13e3ae36e.png)
 
-​		Primeiramente, ocorreu a importação da R*equests*, que é uma biblioteca HTTP para a linguagem de programação e tem como funcionalidade tornar as solicitações HTTP mais simples e mais fáceis de usar. 
+​		Primeiramente, ocorreu a importação da *Requests*, que é uma biblioteca HTTP para a linguagem de programação e tem como funcionalidade tornar as solicitações HTTP mais simples e mais fáceis de usar. 
 
-​		Na sequência, a biblioteca *BeautifulSoup*, tem como funcionalidade a extração de dados de arquivos HTML e XML, funciona também como interpretador (parser). Já a biblioteca *Selenium* é uma ferramenta empregada para automatização de testes de sistemas que permite ao usuário reproduzi-los em passo acelerado no ambiente real da aplicação, em função da sua integração direta com o navegador.
+​		Na sequência, a biblioteca *BeautifulSoup* tem como funcionalidade a extração de dados de arquivos HTML e XML, funcionando também como interpretador (parser). Já a biblioteca *Selenium* é uma ferramenta empregada para automatização de testes de sistemas que permite ao usuário reproduzi-los em passo acelerado no ambiente real da aplicação, em função da sua integração direta com o navegador.
 
-​		Da biblioteca *time*, foi importado o método *sleep* com o objetivo de suspender a execução pelo número de segundos informado em seu parâmetro. Por último, foi importada a biblioteca *Pandas* como a sigla “pd”, com o objetivo de manipulação e análise de dados.
+​		Da biblioteca *time*, foi importado o método *sleep* com o objetivo de suspender a execução pelo número de segundos informado em seu parâmetro. Por último, foi importada a biblioteca *Pandas* como a sigla *pd*, com o objetivo de manipulação e análise de dados.
 
 
 
@@ -56,11 +56,11 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ![2](https://user-images.githubusercontent.com/111388699/200622653-6d76201f-6bc7-4e65-a2a7-753376941e8f.png)
 
-​		O método *__init__():* é um método especial para que o *Python* execute automaticamente sempre que criarmos uma nova instância baseada na classe WebScraping(): foi definido para ter quatro parâmetros: o *self, url*, consulta e arquivo.
+​		O método *__init__():* é um método especial para que o *Python* execute automaticamente sempre que criarmos uma nova instância baseada na classe WebScraping() e, no caso, foi definido para ter quatro parâmetros: o *self, url*, consulta e arquivo.
 
 ​		Logo abaixo, iniciou-se os atributos *self.site*, *self.navegador* e *self.registros* como vazios com o objetivo de receberem seus valores no desenvolvimento do código. O objeto *self.dados_cnpj* foi criado como uma lista vazia a ser preenchida futuramente com um *dataframe*. 
 
-​		Já o *self.options* recebeu o método *Options()*, nativo da biblioteca *Selenium*, que por sua vez recebeu as configurações de inicialização do navegador, sendo a linha 24 para especificar as dimensões da janela do navegador a ser aberta e, na linha 26, para que seja toda rotina realizada sem ser fechada, porém, foi deixada comentada. 
+​		Já o *self.options* recebeu o método *Options()*, nativo da biblioteca *Selenium*, que por sua vez recebeu as configurações de inicialização do navegador, sendo a linha 24 para especificar as dimensões da janela do navegador a ser aberta e, na linha 25, para que seja toda rotina realizada sem ser fechada. Já na linha 26 há o comando para que toda a rotina possa ser realizada sem abrir o navegador, porém, foi deixada comentada. 
 
 ​		Na sequência, com o objetivo de demonstrar que a inicialização de todo método *__init__():* ocorreu com êxito, na linha 28 foi definido para exibir uma mensagem pelo método *print(‘WebScraping inicializado’)*. 
 
@@ -76,7 +76,7 @@ Cada um será responsável por etapas do processo e serão abordados no decorrer
 
 ​		Na sequência, trazendo o método *self.navegador.get(self.url)* com a biblioteca *Requests*, realizando a solicitação HTTP para a linguagem de programação. 
 
-​		O método *sleep* recebeu como parâmetro 3 segundos para aguardar antes de seguir para o próximo método, evitando erros no processo  e evitando a detecção da automação web enquanto ocorre a abertura do navegador e a solicitação do HTTP. 
+​		O método *sleep* recebeu como parâmetro 3 segundos para aguardar antes de seguir para o próximo método, evitando erros no processo e evitando a detecção da automação web enquanto ocorre a abertura do navegador e a solicitação do HTTP. 
 
 
 
@@ -90,7 +90,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Encontrado o elemento, a variável *pesquisa_codigo* recebe o comando de clicar por meio do método *click()*, ficando o espaço apto para receber o número do código desejado por meio do método *send_keys(self.consulta)* (imagem a seguir).
 
-​		Assim, surge uma caixa preditiva com a opção digitada e para dar continuidade a navegação ocorre a nomeação de uma variável como *dropdown* e ela recebe o *self.navegador*  com o método *find_element* para encontrar o elemento pelo *xpath*.
+​		Assim, surge uma caixa preditiva com a opção digitada e para dar continuidade a navegação ocorre a nomeação de uma variável como *dropdown* e ela recebe o *self.navegador* com o método *find_element* para encontrar o elemento pelo *xpath*.
 
 ​		Na linha 49, foi definida a variável *botao_pesquisa* recebendo o *self.navegador*  com o método *find_element* para encontrar o elemento pelo *xpath* e, na linha 52, essa variável recebeu o método *click()*, enviando a pesquisa desejada.
 
@@ -118,7 +118,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Já com a biblioteca *BeutifulSoup* integrada com o *Selenium*, a variável *self.hospedagens* recebeu a variável *self.site* com o método *findAll*, com os parâmetros inspecionados da estrutura HTML: div e o atributo de classe a partir da interpretação do conteúdo HTML.
 
-​		Esses parâmetros foram observados como padrões na estrutura raiz dos anúncios de cada registro. Portanto, a função foi orientada para identificar o bloco raiz de todos os registros da estrutura HTML de cada página a ser percorrida durante a execução do *Web Scraping*. A imagem a seguir ilustra a inspeção desse elemento:
+​		Esses parâmetros foram observados como padrões na estrutura raiz de cada registro. Portanto, a função foi orientada para identificar o bloco raiz de todos os registros da estrutura HTML de cada página a ser percorrida durante a execução do *Web Scraping*. A imagem a seguir ilustra a inspeção desse elemento:
 
 ![8](https://user-images.githubusercontent.com/111388699/200623328-a5bfd29b-9169-48d8-b3cf-1322f8958114.png)
 
@@ -134,9 +134,9 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 ​		Cada variável recebeu o registro com o método *find* e entre os parênteses os parâmetros encontrados na inspeção da estrutura HTML. 
 
-​		Para as variáveis *registro_numero* e *registro_status*  foi chamado o método *get_text()* com o objetivo de trazer as informações limpas, sem trechos das estruturas HTML. 
+​		Para as variáveis *registro_numero* e *registro_status*,  foi chamado o método *get_text()* com o objetivo de trazer as informações limpas, sem trechos das estruturas HTML. 
 
-​		As variáveis *registro_nome* e *registro_endereco*, além do método *find()*, receberam também o método findNext(), para que fosse encontrado na estrutura HTML o próximo tópico semelhante na sequência, seguido de *.content[0]*  para a extração somente do respectivo texto. Ainda na variável *registro_endereço* foi utilizado uma operação de fatiamento de strings (slicing) "*[2:]*" com o objetivo de extrair apenas a parte útil do dado desejado. 
+​		As variáveis *registro_nome* e *registro_endereco*, além do método *find()*, receberam também o método findNext() para que fosse encontrado na estrutura HTML o próximo tópico semelhante na sequência, seguido de *.content[0]* para a extração somente do respectivo texto. Ainda na variável *registro_endereço* foi utilizado uma operação de fatiamento de strings (slicing) "*[2:]*" com o objetivo de extrair apenas a parte útil do dado desejado. 
 
 ​		Após definida a estrutura da extração de dados de cada variável, o método *print()* foi chamado, para cada uma delas, de forma que ficasse organizado no terminal do interpretador, sendo que foi utilizado um "*print()*" vazio para realizar uma quebra de linha entre as informações extraídas. 
 
@@ -182,7 +182,7 @@ Essa função identifica e executa os elementos de navegação do site casa dos 
 
 #### Execução - if __name__== '__main__':
 
-Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evitar que partes do código sejam executadas ao importar os módulos. Quando o interpretador do *Python* lê um arquivo, a variável **__name__** é definida como **__main__**, se o módulo está sendo executado, ou como o nome do módulo se ele for importado.
+Podemos usar um bloco *if __name__ == '__main__'* para permitir ou evitar que partes do código sejam executadas ao importar os módulos. Quando o interpretador do *Python* lê um arquivo, a variável __name__ é definida como __main__, se o módulo está sendo executado, ou como o nome do módulo se ele for importado.
 
 ![14](https://user-images.githubusercontent.com/111388699/200623756-30a94487-a5c6-4bfb-ae54-40d754e856fa.png)
 
@@ -194,7 +194,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		O laço teve início com a criação da variável *botao_prox_pag* e a ela foi atribuído o valor *True*. Na linha subsequente, essa variável foi alocada em um laço *while* atribuindo o funcionamento das etapas indentadas (linhas 119 a 133) enquanto o *botao_prox_pag* permaneça com o valor de verdadeiro (*True*). Assim, a variável *botao_prox_pag* foi atribuída a função *self.prox_pag():*. 
 
-​		A análise de valor como verdadeiro ou falso foi feita pela função *self.prox_pag()*:,encerrando o laço while, prosseguindo para criação da tabela e conclusão da execução do código.
+​		A análise de valor como verdadeiro ou falso foi feita pela função *self.prox_pag()*:, encerrando o laço while, prosseguindo para criação da tabela e conclusão da execução do código.
 
 
 
@@ -230,7 +230,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ​		O método *__init__* foi definido para ter três parâmetros: o *self*, *host e schema*.
 
-​		Logo abaixo, iniciam-se os objetos *self.conn* e *self.cur*  como vazios com o objetivo de receberem seus valores no desenvolvimento do código. As variáveis *self.my_db_user* e *self.my_db_password* receberam, por meio da biblioteca *os* e do método *get()*, variáveis de ambiente para não ocorrer exposição de credenciais partiulares no script. 
+​		Logo abaixo, iniciam-se os objetos *self.conn* e *self.cur*  como vazios com o objetivo de receberem seus valores no desenvolvimento do código. As variáveis *self.my_db_user* e *self.my_db_password* receberam, por meio da biblioteca *os* e do método *get()*, variáveis de ambiente para não ocorrer exposição de credenciais particulares no script. 
 
 
 
@@ -280,7 +280,7 @@ Podemos usar um bloco **if __name__ ==** ''**__main__**'' para permitir ou evita
 
 ![20](https://user-images.githubusercontent.com/111388699/200625237-c488343f-8be1-4d57-bde3-8bf8ac6313d2.png)
 
-​		Novamente, tem o objetivo de orquestrar a execução sequencial de todas as fases do envio das informações da planilha do excel para o MySQL, como um índice representativo e intuitivo, com o chamado de todos os métodos já explicados e trazendo também mensagens de êxito nas conclusões de cada etapa pelo método *print()*. 
+​		Novamente, tem o objetivo de orquestrar a execução sequencial de todas as fases do envio das informações da planilha do Excel para o MySQL, como um índice representativo e intuitivo, com o chamado de todos os métodos já explicados e trazendo também mensagens de êxito nas conclusões de cada etapa pelo método *print()*. 
 
 ​		Foi criada a variável *build* recebendo a classe Excel_to_Mysql, dando como parâmetros o host="localhost" e schema=’casadosdados’. Lembrando que esses parâmetros estavam sendo preparados desde a *def __init__():*.
 
